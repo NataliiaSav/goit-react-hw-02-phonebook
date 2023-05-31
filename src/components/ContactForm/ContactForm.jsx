@@ -1,23 +1,42 @@
 import React, { Component } from "react";
+
 export class ContactForm extends Component {
     state = {
-  contacts: [],
-  name: ''
-    }
+        name: '',
+        number: ''
+    };
 
     handleChange = event => {
-        const {name, value} = event.currentTarget
+        const { name, value } = event.currentTarget
         this.setState({
             [name]: value
-        })
-    }
+        });
+    };
+
+    handleSubmit = event => {
+        event.preventDefault();
+       
+    };
+
     render() {
         return (
             <form>
                 <label>
                     <p>Name</p>
-                    <input
+                    <input onSubmit = {this.handleSubmit}
                         value={this.state.name}
+                        onChange={this.handleChange}
+                        type="text"
+                        name="name"
+                        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                        required
+                    />
+                </label>
+                <label>
+                    <p>Number</p>
+                    <input
+                        value={this.state.number}
                         onChange={this.handleChange}
                         type="tel"
                         name="number"

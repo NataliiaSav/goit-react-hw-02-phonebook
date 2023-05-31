@@ -2,6 +2,9 @@ import { ContactForm } from "./ContactForm/ContactForm"
 
 export const App = () => {
   return (
-    <ContactForm/>
+    <>
+    <h2>Phonebook</h2>
+      <ContactForm />
+      </>
   );
 };
