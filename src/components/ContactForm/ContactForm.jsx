@@ -8,22 +8,23 @@ export class ContactForm extends Component {
 
     handleChange = event => {
         const { name, value } = event.currentTarget
-        this.setState({
-            [name]: value
-        });
+        this.setState({[name]: value});
     };
 
     handleSubmit = event => {
         event.preventDefault();
-       
+        this.props.addContact(this.state);
+        this.reset();
     };
-
+    reset = () => {
+        this.setState({name: '', number: ''})
+    }
     render() {
         return (
-            <form>
+        <form onSubmit = {this.handleSubmit}>
                 <label>
                     <p>Name</p>
-                    <input onSubmit = {this.handleSubmit}
+                    <input 
                         value={this.state.name}
                         onChange={this.handleChange}
                         type="text"
