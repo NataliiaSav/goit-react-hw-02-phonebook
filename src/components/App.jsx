@@ -16,7 +16,7 @@ export class App extends Component {
   };
   
   formAddContact = ({name, number}) => {
-    this.state.contacts.filter(
+    this.state.contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase() 
         ? alert(`${name} is already in contacts`)
         : this.setState(prevState => {
