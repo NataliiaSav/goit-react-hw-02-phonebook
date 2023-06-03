@@ -15,15 +15,20 @@ export class App extends Component {
     filter: ''
   };
   
-  formAddContact = ({name, number}) => {
-    this.state.contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase() 
-        ? alert(`${name} is already in contacts`)
-        : this.setState(prevState => {
-          return {contacts: [ ...prevState.contacts, {id: nanoid(), name: name, number: number}]}
-        })
-    )
-}
+  formAddContact = ({ name, number }) => {
+    const newContact = { id: nanoid(), name, number };
+    const isContactExists = this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+    if (isContactExists) {
+      alert(`${name} is already in contacts`);
+    } else {
+      this.setState(prevState => ({
+        contacts: [...prevState.contacts, newContact],
+      }));
+    }
+  };
+  
   changeFilter = (event) => {
     this.setState({filter: event.currentTarget.value})
   }
