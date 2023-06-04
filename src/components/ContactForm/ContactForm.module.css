@@ -1,4 +1,15 @@
 .form {
     display: flex;
     flex-direction: column;
+    background-color: #ADD8E6;
+    padding: 30px;
+    border-radius: 4px;
+};
+.btnContact {
+margin-top: 15px;
+height: 40px;
+};
+.inputContact{
+padding-top: 10px;
+padding-bottom: 15px;
 }

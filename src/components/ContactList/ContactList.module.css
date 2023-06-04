@@ -1,0 +1,12 @@
+.contactItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+.btnDelete {
+    margin-left: 15px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+}
