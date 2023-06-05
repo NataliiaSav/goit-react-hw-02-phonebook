@@ -24,9 +24,9 @@ export class ContactForm extends Component {
     render() {
         return (
             <form className={css.form} onSubmit = {this.handleSubmit}>
-                <label>
-                    <p>Name</p>
-                    <input className={css.inputContact}
+                <label className = {css.label}>
+                    <p className={css.title}>Name</p>
+                    <input className={css.input}
                         value={this.state.name}
                         onChange={this.handleChange}
                         type="text"
@@ -36,10 +36,10 @@ export class ContactForm extends Component {
                         required
                     />
                 </label>
-                <label>
-                    <p>Number</p>
+                <label className = {css.label}>
+                    <p className={css.title}>Number</p>
                     <input
-                        className={css.inputContact}
+                        className={css.input}
                         value={this.state.number}
                         onChange={this.handleChange}
                         type="tel"
